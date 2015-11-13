@@ -1,0 +1,8 @@
+<h1>Add new Pin</h1>
+<%=form_for [@board, @pin] do |f| %>
+  <p><%=f.label :title%></p>
+  <p><%=f.text_field :title%></p>
+  <p><%=f.label :url%></p>
+  <p><%=f.text_field :url%></p>  
+  <p><%=f.submit%></p>
+<%end%>

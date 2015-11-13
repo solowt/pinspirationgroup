@@ -1,0 +1,9 @@
+<h1>title: <%=@board.title%> By: <%=@board.user.email%></h1>
+<ul>
+<%@board.pins.each do |pin|%>
+  <li><p><%=pin.title%></p>  <img src="<%=pin.url%>"/></li>
+<%end%>
+</ul>
+
+
+<%=link_to "Add Pin", new_board_pin_path(@board)%>
