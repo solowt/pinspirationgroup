@@ -20,7 +20,7 @@ html {
   color: white;
 }
 
-a:visited {
+a:visited, a {
   color: lemonchiffon
 }
 
@@ -52,7 +52,7 @@ body {
 
  .logins a:hover {
    border-bottom: 3px solid blue;
-    width: 100px;
+    width: 80px;
  }
 
  img{
@@ -97,5 +97,35 @@ input[type="password"] {
 }
 
 .main {
+  margin-top: 20px;
   padding: 0 8px;
+}
+
+
+.create {
+  padding: 10px 20px;
+  /*border: 2px solid green;*/
+  background-color: green;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.boards-container {
+  margin: 40px 20px;
+  padding: 15px;
+}
+
+.board {
+  margin-bottom: 20px;
+  border: 3px solid green;
+  padding: 20px;
+  box-shadow: 0 1px 5px black;
+}
+
+.board a {
+  text-decoration: none;
+}
+
+.board img {
+  border-radius: 25px;
 }
