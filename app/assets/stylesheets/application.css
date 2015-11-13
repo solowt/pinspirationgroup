@@ -13,6 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+
+html {
+  background: #3B3C36;
+  color: white;
+}
+
+a:visited {
+  color: lemonchiffon
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -60,7 +71,7 @@ body {
 
 .logins li {
   display: inline;
-  margin: 0px 25px;
+  margin: 0px 30px;
 }
 
 .new_user {
