@@ -1,12 +1,17 @@
 <h1>title: <%=@board.title%> By: <%=@board.user.email%></h1>
+<%=form_for [@board], method: "delete" do |f| %>
+  <%=f.submit "Delete Board", class: "delete"%>
+<%end%>
+<%=link_to "Edit Board", edit_board_path(@board)%>
+<hr>
+<%=link_to "Add Pin", new_board_pin_path(@board)%>
+<hr>
 <ul>
 <%@board.pins.each do |pin|%>
   <li><p><%=pin.title%></p>  <img src="<%=pin.url%>"/></li>
   <%=form_for [@board,pin], method: "delete" do |f| %>
-      <%=f.submit "Delete Pin", class: "delete"%>
-    <%end%>
+    <%=f.submit "Delete Pin", class: "delete"%>
+  <%end%>
+  <%=link_to "Edit Pin", edit_board_pin_path(@board, pin)%>
 <%end%>
 </ul>
-
-
-<%=link_to "Add Pin", new_board_pin_path(@board)%>
