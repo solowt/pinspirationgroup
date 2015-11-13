@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113171734) do
+ActiveRecord::Schema.define(version: 20151113180539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,11 @@ ActiveRecord::Schema.define(version: 20151113171734) do
   end
 
   add_index "pins", ["board_id"], name: "index_pins_on_board_id", using: :btree
+
+  create_table "tagpins", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "pin_id"
+  end
 
   create_table "tags", force: :cascade do |t|
     t.string "descrip"

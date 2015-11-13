@@ -8,10 +8,20 @@
 <hr>
 <ul>
 <%@board.pins.each do |pin|%>
-  <li><p><%=pin.title%></p>  <img src="<%=pin.url%>"/></li>
+  <li><p><%=pin.title%></p>  <img src="<%=pin.url%>"/>
+  <p>Tags:</p>
+  <%pin.tagpins.each do |tagpin|%>
+    <%=tagpin.tag.descrip%>
+  <%end%>
+  <%=form_for [@board, pin, @tagpin] do |f|%>
+    <%=link_to text_field_tag :descrip%>
+    <%=f.submit "Add Tag"%>
+  <%end%>
+
   <%=form_for [@board,pin], method: "delete" do |f| %>
     <%=f.submit "Delete Pin", class: "delete"%>
   <%end%>
   <%=link_to "Edit Pin", edit_board_pin_path(@board, pin)%>
-<%end%>
+  <%end%>
+</li>
 </ul>
