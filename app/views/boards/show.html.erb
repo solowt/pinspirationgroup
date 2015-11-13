@@ -1,15 +1,15 @@
-<h1>title: <%=@board.title%> By: <%=@board.user.email%></h1>
-<%=form_for [@board], method: "delete" do |f| %>
-  <%=f.submit "Delete Board", class: "delete"%>
-<%end%>
+<h1><%=@board.title%> By: <%=@board.user.email%></h1>
+
 <%=link_to "Edit Board", edit_board_path(@board)%>
+<%= link_to "Delete Board", @board , method: :delete %>
 <hr>
 <%=link_to "Add Pin", new_board_pin_path(@board)%>
 <hr>
 <ul>
 <%@board.pins.each do |pin|%>
-  <div class="pins">
-  <li><p><%=pin.title%></p>  <img src="<%=pin.url%>"/>
+  <li>
+    <p><%=pin.title%></p>
+    <img class="pin_img" src="<%=pin.url%>"/>
   <p>Tags:</p>
   <%pin.tagpins.each do |tagpin|%>
     <%=link_to tagpin.tag.descrip, tag_path(tagpin.tag)%>
@@ -19,12 +19,10 @@
     <%=text_field_tag :descrip%>
     <%=f.submit "Add Tag"%>
   <%end%>
-
-  <%=form_for [@board,pin], method: "delete" do |f| %>
-    <%=f.submit "Delete Pin", class: "delete"%>
+  <div class="pin_controls">
+    <%=link_to "Edit Pin", edit_board_pin_path(@board, pin)%>
+    <%= link_to "Delete Pin", [@board,pin], method: :delete%>
+  </div>
   <%end%>
-  <%=link_to "Edit Pin", edit_board_pin_path(@board, pin)%>
-</div>
-  <%end%>
-</li>
+  </li>
 </ul>
