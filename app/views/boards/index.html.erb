@@ -1,1 +1,5 @@
 hello
+<%=link_to "new board", new_board_path%>
+<%@boards.each do |board|%>
+  <p>title: <%=link_to board.title, board_path(board)%> user: <%=board.user.email%></p>
+<%end%>
