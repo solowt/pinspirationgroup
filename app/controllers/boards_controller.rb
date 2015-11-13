@@ -18,10 +18,8 @@ class BoardsController < ApplicationController
     @board = Board.new
   end
   def create
-    puts "*"*20
-    puts params.inspect
     @board = current_user.boards.create!(board_params)
-    redirect_to boards_path
+    redirect_to board_path(@board)
   end
   def destroy
     @board = Board.find(params[:id])
