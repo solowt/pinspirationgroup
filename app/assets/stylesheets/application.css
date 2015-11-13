@@ -14,8 +14,30 @@
  *= require_self
  */
 
+
+html {
+  background: #3B3C36;
+  color: white;
+}
+
+a:visited {
+  color: lemonchiffon
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
  header {
+   padding-top: 15px;
    border-bottom: 5px solid rgba(149, 165, 166, 0.4);
+   background: -webkit-linear-gradient(90deg, #2BC0E4 10%, #EAECC6 90%); /* Chrome 10+, Saf5.1+ */
+   background:    -moz-linear-gradient(90deg, #2BC0E4 10%, #EAECC6 90%); /* FF3.6+ */
+   background:     -ms-linear-gradient(90deg, #2BC0E4 10%, #EAECC6 90%); /* IE10 */
+   background:      -o-linear-gradient(90deg, #2BC0E4 10%, #EAECC6 90%); /* Opera 11.10+ */
+   background:         linear-gradient(90deg, #2BC0E4 10%, #EAECC6 90%); /* W3C */
+
  }
 
  .logins a {
@@ -37,3 +59,43 @@
    width: 30%;
    height: 30%;
  }
+
+ .logo {
+ display:block;
+   margin:auto;
+}
+
+.logins ul {
+  list-style: none;
+}
+
+.logins li {
+  display: inline;
+  margin: 0px 30px;
+}
+
+.new_user {
+  margin: 10px;
+  padding: 20px;
+}
+
+label {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+  margin: 15px 15px 25px 15px;
+  height: 55px;
+  width: 35%;
+  font-size: 20px;
+  outline: none;
+  padding: 0 5px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.main {
+  padding: 0 8px;
+}
