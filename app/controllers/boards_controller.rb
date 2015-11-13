@@ -12,6 +12,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @tagpin = Tagpin.new
   end
   def new
     @board = Board.new
