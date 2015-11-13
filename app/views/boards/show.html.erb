@@ -2,6 +2,9 @@
 <ul>
 <%@board.pins.each do |pin|%>
   <li><p><%=pin.title%></p>  <img src="<%=pin.url%>"/></li>
+  <%=form_for [@board,pin], method: "delete" do |f| %>
+      <%=f.submit "Delete Pin", class: "delete"%>
+    <%end%>
 <%end%>
 </ul>
 

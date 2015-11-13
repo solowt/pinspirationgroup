@@ -18,7 +18,10 @@ class PinsController < ApplicationController
     redirect_to board_path(@board)
   end
   def destroy
-
+    @board = Board.find(params[:board_id])
+    @pin = Pin.find(params[:id])
+    @pin.destroy
+    redirect_to board_path(@board)
   end
   def edit
   end
