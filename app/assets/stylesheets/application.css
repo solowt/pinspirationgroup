@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+ header {
+   border-bottom: 5px solid rgba(149, 165, 166, 0.4);
+ }
+
+ .logins a {
+   text-decoration: none;
+    display: inline-block;
+    border-bottom: 3px solid transparent;
+    width: 0px;
+    transition: 0.5s ease;
+    white-space: nowrap;
+    height: 25px;
+ }
+
+ .logins a:hover {
+   border-bottom: 3px solid blue;
+    width: 100px;
+ }
+
+ img{
+   width: 30%;
+   height: 30%;
+ }
