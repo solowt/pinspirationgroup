@@ -1,6 +1,6 @@
 <h1>All Articles related to <%=@tag.descrip%></h1>
 <%@tag.tagpins.each do |tagpin|%>
 <ul>
-    <li><%=link_to tagpin.pin.title, board_path(tagpin.pin.board)%> <img src=<%=tagpin.pin.url%>></li>
+    <li><%=link_to tagpin.pin.title, board_path(tagpin.pin.board)%> <img class="tagimg" src=<%=tagpin.pin.url%>></li>
 </ul>
 <%end%>
