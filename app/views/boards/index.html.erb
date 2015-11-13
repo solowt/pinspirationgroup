@@ -1,5 +1,15 @@
-hello
-<%=link_to "new board", new_board_path%>
-<%@boards.each do |board|%>
-  <p>title: <%=link_to board.title, board_path(board)%> user: <%=board.user.email%></p>
-<%end%>
+
+<%=link_to "New Board", new_board_path, class: "create"%>
+<div class="boards-container">
+  <% @boards.each do |board| %>
+    <div class="board">
+      <h2><%=link_to board.title.upcase, board_path(board)%></h2>
+
+        <% board.pins.each do |pin| %>
+        <%= image_tag pin.url %>
+        <% end %>
+
+
+    </div>
+  <% end %>
+</div>
